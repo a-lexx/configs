@@ -1,0 +1,10 @@
+[Unit]
+Description=A job to test the systemd scheduler
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0"
+ExecStart=/usr/bin/notify-send "System Administrator Appreciation Day"
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Upload inventory files
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/scp -i /home/lexx/.ssh/sp devel@sp.prod.sea:/var/www/sp/servicepanel/scripts/{voip,oshop}.yml /home/lexx/
+
+[Install]
+WantedBy=default.target

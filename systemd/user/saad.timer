@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule saad
+
+[Timer]
+Persistent=true
+Unit=saad.service
+OnCalendar=Fri *-07~05/1 8/1:00/25:00
+#OnUnitActiveSec=0.25h
+
+[Install]
+WantedBy=timers.target

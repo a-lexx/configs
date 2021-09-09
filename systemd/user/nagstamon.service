@@ -1,0 +1,19 @@
+[Unit]
+Description=Nagstamon - Nagios status monitor which takes place in systray or on desktop
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 30
+Environment=QT_STYLE_OVERRIDE=Adwaita-Dark
+Environment=QT_QPA_PLATFORM=wayland
+Environment=QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+Environment=GDK_BACKEND=wayland
+#ExecStart=nagstamon --name=nagstamon --title=Nagstamon --class=nagstamon
+ExecStart=nagstamon
+ExecStop=/bin/kill -2 $MAINPID
+Restart=always
+RestartSec=4
+TimeoutStopSec=10
+
+[Install]
+WantedBy=sway-session.target

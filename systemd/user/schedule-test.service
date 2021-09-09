@@ -1,0 +1,9 @@
+[Unit]
+Description=A job to test the systemd scheduler
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/test.sh
+
+[Install]
+WantedBy=default.target

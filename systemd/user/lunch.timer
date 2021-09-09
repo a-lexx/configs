@@ -1,0 +1,10 @@
+[Unit]
+Description=Schedule a message every 1 minute
+
+[Timer]
+Persistent=true
+Unit=lunch.service
+OnCalendar=Mon..Fri *-*-* 13:50,52,54,56,58
+
+[Install]
+WantedBy=timers.target
