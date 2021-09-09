@@ -1,0 +1,32 @@
+startup_message off
+deflogin on
+autodetach on
+vbell off
+vbell_msg "   Wuff  ----  Wuff!!  "
+defscrollback 1024
+bind ^k
+bind ^\
+bind \\ quit
+bind K kill
+bind I login on
+bind O login off
+bind } history
+termcapinfo vt100 dl=5\E[M
+hardstatus off
+termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+hardstatus string "%h%? users: %u%?"
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+defnonblock 5
+#escape \034\034
+bindkey -k k1 prev
+bindkey -k k2 next
+defutf8 on
+shell -$SHELL
+termcapinfo xterm* ti@:te@
+shelltitle '$ |sh'
+hardstatus alwayslastline "%{+b wk} %c $LOGNAME@%H %=[] %w ] "
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10                                                            
+screen 1
