@@ -1,5 +1,5 @@
 startup_message off
-deflogin on
+# deflogin on
 autodetach on
 vbell off
 defscrollback 1024
@@ -7,8 +7,8 @@ bind ^k
 bind ^\
 bind \\ quit
 bind K kill
-bind I login on
-bind O login off
+# bind I login on
+# bind O login off
 bind } history
 termcapinfo vt100 dl=5\E[M
 termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
@@ -29,6 +29,7 @@ bind c screen 1
 bind ^c screen 1
 bind 0 select 10                                                            
 screen 1
+shell "/bin/bash"
 # auto-log
-logfile $HOME/.log/screen/%Y%m%d-%n.log
-#deflog on
+# logfile $HOME/.log/screen/%Y%m%d-%n.log
+# deflog on
