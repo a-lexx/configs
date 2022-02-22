@@ -35,6 +35,8 @@ PS1='\[\e[1;36m\][\A]\[\e[1;34m\]\u@\[\e[1;33m\]\H:\[\e[1;36m\]\w\$\[\e[0m\] '
 export EDITOR=/usr/bin/vim
 export PAGER=/usr/bin/less
 
+export OSSLSUBJ='-subj "/C=UA/ST=Kyiv/L=Kyiv/O=Fulcrum Rocks/CN=rancher.fulcrum.rocks"'
+
 # History
 #Чтобы одинаковые команды не сохранялись в истории:
 HISTCONTROL=ignoredups

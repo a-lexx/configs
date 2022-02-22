@@ -1,0 +1,8 @@
+# install tap
+brew tap Homebrew/bundle
+
+# dump packages installed
+brew bundle dump
+
+# restore (in the directory with Brewfile)
+brew bundle
