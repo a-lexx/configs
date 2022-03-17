@@ -911,4 +911,4 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 window:
-  opacity: 0.8
+  opacity: 0.2
