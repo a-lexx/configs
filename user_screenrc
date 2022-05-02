@@ -29,7 +29,7 @@ bind c screen 1
 bind ^c screen 1
 bind 0 select 10                                                            
 screen 1
-shell "/bin/bash"
+#shell "/bin/bash"
 # auto-log
 # logfile $HOME/.log/screen/%Y%m%d-%n.log
 # deflog on
