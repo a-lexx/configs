@@ -148,6 +148,9 @@ font:
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
+  antialias: true
+  autohint: true
+
 
   # Bold italic font face
   #bold_italic:
@@ -169,6 +172,9 @@ font:
   #offset:
   #  x: 0
   #  y: 0
+  offset:
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -176,6 +182,9 @@ font:
   #glyph_offset:
   #  x: 0
   #  y: 0
+  glyph_offset:
+    x: 0
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -912,4 +921,10 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 window:
-  opacity: 0.5
+  opacity: 0.85
+  dimensions:
+    columns: 150
+    lines: 50
+  padding:
+    x: 5
+    y: 10
