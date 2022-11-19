@@ -107,12 +107,13 @@ env:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    family: Hack
+    #family: Hack
+    family: MesloLGS NF
   # Font size
   size: 17
 
   # Better font rendering for mac
-  use_thin_strokes: true
+  #use_thin_strokes: true
   # Normal (roman) font face
   #normal:
     # Font family
@@ -890,7 +891,7 @@ colors:
     matches:
       foreground: CellBackground
       background: '#88c0d0'
-    bar:
+    footer_bar:
       background: '#434c5e'
       foreground: '#d8dee9'
   normal:
@@ -921,7 +922,7 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 window:
-  opacity: 0.85
+  opacity: 0.75
   dimensions:
     columns: 150
     lines: 50
