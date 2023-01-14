@@ -1,0 +1,21 @@
+#backup cap1
+/system/backup/save name=cap1; export file=cap1.rsc
+
+#upload, directory ~/backups/mikrotik/v7.6/ must be exists, for example: (mkdir -p ~/backups/mikrotik/v7.6/)
+sftp cap1:cap1.backup ~/backups/mikrotik/v7.6/
+sftp cap1:cap1.rsc ~/backups/mikrotik/v7.6/
+
+#backup cap2
+/system/backup/save name=cap2; export file=cap2.rsc
+
+#upload, directory ~/backups/mikrotik/v7.6/ must be exists, for example: (mkdir -p ~/backups/mikrotik/v7.6/)
+sftp cap2:cap2.backup ~/backups/mikrotik/v7.6/
+sftp cap2:cap2.rsc ~/backups/mikrotik/v7.6/
+
+#backup cap3
+/system/backup/save name=cap3; export file=cap3.rsc
+
+#upload, directory ~/backups/mikrotik/v7.6/ must be exists, for example: (mkdir -p ~/backups/mikrotik/v7.6/)
+sftp cap3:cap3.backup ~/backups/mikrotik/v7.6/
+sftp cap3:cap3.rsc ~/backups/mikrotik/v7.6/
+
