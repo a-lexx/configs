@@ -1,13 +1,13 @@
-# jan/14/2023 00:05:46 by RouterOS 7.7
+# jan/23/2023 22:51:35 by RouterOS 7.7
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
 # serial number = 939208928B82
 /caps-man channel
 add band=2ghz-g/n control-channel-width=20mhz extension-channel=disabled \
-    frequency=2462,2472,2412 name=root reselect-interval=1d tx-power=20
-add band=5ghz-a/n/ac frequency=5180,5220,5240,5765 name=1519 \
-    reselect-interval=1d save-selected=yes skip-dfs-channels=yes tx-power=20
+    frequency=2462,2472,2442,2452 name=root reselect-interval=1d tx-power=20
+add band=5ghz-a/n/ac frequency=5200,5220,5320,5500,5640,5765 name=1519 \
+    reselect-interval=1d save-selected=yes skip-dfs-channels=no tx-power=20
 /interface bridge
 add name=bridge1
 /interface ethernet
@@ -18,11 +18,11 @@ set [ find default-name=ether4 ] comment=reserv
 set [ find default-name=ether5 ] comment=cap3
 /interface wireless
 # managed by CAPsMAN
-# channel: 2472/20/gn(17dBm), SSID: 1519_2, CAPsMAN forwarding
+# channel: 2472/20/gn(17dBm), SSID: root, CAPsMAN forwarding
 set [ find default-name=wlan1 ] country=ukraine mode=ap-bridge ssid=root \
     wireless-protocol=802.11
 # managed by CAPsMAN
-# channel: 5240/20-Ceee/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
+# channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] country=ukraine frequency=5240 mode=ap-bridge \
     ssid=1519 wireless-protocol=802.11
 /caps-man datapath
@@ -36,7 +36,7 @@ add channel=1519 channel.skip-dfs-channels=no country=ukraine datapath=\
     datapath1 distance=indoors installation=indoor mode=ap name=cfg_5G \
     rx-chains=0,1,2 security=security1 ssid=1519 tx-chains=0,1,2
 add channel=root country=ukraine datapath=datapath1 installation=indoor mode=\
-    ap name=cfg_2.4G rx-chains=0,1 security=security1 ssid=1519_2 tx-chains=\
+    ap name=cfg_2.4G rx-chains=0,1 security=security1 ssid=root tx-chains=\
     0,1,2
 /caps-man interface
 add configuration=cfg_2.4G disabled=no l2mtu=1600 mac-address=\
@@ -58,10 +58,10 @@ add address-pool=dhcp interface=bridge1 name=dhcp1
 /caps-man manager
 set enabled=yes
 /caps-man provisioning
-add action=create-dynamic-enabled hw-supported-modes=an,ac \
-    master-configuration=cfg_5G
 add action=create-dynamic-enabled hw-supported-modes=b,gn \
     master-configuration=cfg_2.4G
+add action=create-dynamic-enabled hw-supported-modes=an,ac \
+    master-configuration=cfg_5G
 /interface bridge port
 add bridge=bridge1 interface=ether2
 add bridge=bridge1 interface=ether3

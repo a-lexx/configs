@@ -1,4 +1,4 @@
-# jan/13/2023 23:58:46 by RouterOS 7.7
+# jan/23/2023 22:51:35 by RouterOS 7.7
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
@@ -7,9 +7,10 @@
 add name=bridge1
 /interface wireless
 # managed by CAPsMAN
-# channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
+# channel: 2472/20/gn(18dBm), SSID: root, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
+# channel: 5640/20-eCee/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] ssid=MikroTik
 /interface list
 add name=WAN
@@ -52,10 +53,9 @@ add comment=dark-mode disabled=yes interval=12h name=dark-mode on-event=\
     oct/27/2022 start-time=21:00:00
 /system script
 add comment=defconf dont-require-permissions=no name=dark-mode owner=*sys \
-    policy=read,write,policy,test source="\
-    \n   :if ([system leds settings get all-leds-off] = \"never\") do={\
+    policy=read,write,policy,test source="   :if ([system leds settings get al\
+    l-leds-off] = \"never\") do={\
     \n     /system leds settings set all-leds-off=immediate \
     \n   } else={\
     \n     /system leds settings set all-leds-off=never \
-    \n   }\
-    \n "
+    \n   }"

@@ -1,4 +1,4 @@
-# jan/14/2023 10:40:51 by RouterOS 7.7
+# jan/23/2023 22:51:35 by RouterOS 7.7
 # software id = 60N6-GUN1
 #
 # model = RBcAPGi-5acD2nD
@@ -7,10 +7,10 @@
 add name=bridge1
 /interface wireless
 # managed by CAPsMAN
-# channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
+# channel: 2472/20/gn(18dBm), SSID: root, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
-# channel: 5180/20-Ceee/ac/P(17dBm), SSID: 1519, CAPsMAN forwarding
+# channel: 5500/20-Ceee/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] ssid=MikroTik
 /interface list
 add name=WAN
