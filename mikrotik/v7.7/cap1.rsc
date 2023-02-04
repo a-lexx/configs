@@ -1,4 +1,4 @@
-# jan/23/2023 22:51:35 by RouterOS 7.7
+# feb/04/2023 12:46:09 by RouterOS 7.7
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -17,12 +17,8 @@ set [ find default-name=ether3 ] comment=cap2
 set [ find default-name=ether4 ] comment=reserv
 set [ find default-name=ether5 ] comment=cap3
 /interface wireless
-# managed by CAPsMAN
-# channel: 2472/20/gn(17dBm), SSID: root, CAPsMAN forwarding
 set [ find default-name=wlan1 ] country=ukraine mode=ap-bridge ssid=root \
     wireless-protocol=802.11
-# managed by CAPsMAN
-# channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] country=ukraine frequency=5240 mode=ap-bridge \
     ssid=1519 wireless-protocol=802.11
 /caps-man datapath
@@ -73,9 +69,7 @@ set discover-interface-list=LAN
 add interface=ether1 list=WAN
 add interface=bridge1 list=LAN
 /interface wireless cap
-# 
-set bridge=bridge1 caps-man-addresses=127.0.0.1 enabled=yes interfaces=\
-    wlan1,wlan2
+set bridge=bridge1 caps-man-addresses=127.0.0.1 interfaces=wlan1,wlan2
 /ip address
 add address=172.18.2.50/24 interface=bridge1 network=172.18.2.0
 /ip dhcp-client

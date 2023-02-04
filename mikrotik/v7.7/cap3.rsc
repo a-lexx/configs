@@ -1,4 +1,4 @@
-# jan/23/2023 22:51:35 by RouterOS 7.7
+# feb/04/2023 12:46:09 by RouterOS 7.7
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
@@ -10,7 +10,7 @@ add name=bridge1
 # channel: 2472/20/gn(18dBm), SSID: root, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
-# channel: 5640/20-eCee/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
+# channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] ssid=MikroTik
 /interface list
 add name=WAN
@@ -42,6 +42,8 @@ add disabled=no distance=1 dst-address=0.0.0.0/0 gateway=172.18.2.50 \
 set time-zone-name=Europe/Kyiv
 /system identity
 set name=CAP3
+/system leds settings
+set all-leds-off=immediate
 /system ntp client
 set enabled=yes
 /system ntp client servers

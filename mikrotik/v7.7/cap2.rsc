@@ -1,4 +1,4 @@
-# jan/23/2023 22:51:35 by RouterOS 7.7
+# feb/04/2023 12:46:09 by RouterOS 7.7
 # software id = 60N6-GUN1
 #
 # model = RBcAPGi-5acD2nD
@@ -47,7 +47,7 @@ set enabled=yes
 add address=ntp.time.in.ua
 add address=ntp2.time.in.ua
 /system scheduler
-add comment=dark-mode interval=12h name=dark-mode on-event=\
+add comment=dark-mode disabled=yes interval=12h name=dark-mode on-event=\
     "/system/script/run dark-mode" policy=read,write,policy,test start-date=\
     oct/26/2022 start-time=21:00:00
 /system script
