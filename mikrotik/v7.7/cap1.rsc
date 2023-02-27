@@ -1,4 +1,4 @@
-# feb/04/2023 12:46:09 by RouterOS 7.7
+# feb/27/2023 10:40:42 by RouterOS 7.7
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -21,19 +21,22 @@ set [ find default-name=wlan1 ] country=ukraine mode=ap-bridge ssid=root \
     wireless-protocol=802.11
 set [ find default-name=wlan2 ] country=ukraine frequency=5240 mode=ap-bridge \
     ssid=1519 wireless-protocol=802.11
+/interface wireguard
+add listen-port=51820 mtu=1420 name=wireguard1
 /caps-man datapath
 add bridge=bridge1 client-to-client-forwarding=yes local-forwarding=no name=\
     datapath1
 /caps-man security
 add authentication-types=wpa2-psk encryption=aes-ccm group-encryption=aes-ccm \
     name=security1
+add authentication-types=wpa2-psk encryption=aes-ccm \
+    name=easy
 /caps-man configuration
 add channel=1519 channel.skip-dfs-channels=no country=ukraine datapath=\
     datapath1 distance=indoors installation=indoor mode=ap name=cfg_5G \
     rx-chains=0,1,2 security=security1 ssid=1519 tx-chains=0,1,2
 add channel=root country=ukraine datapath=datapath1 installation=indoor mode=\
-    ap name=cfg_2.4G rx-chains=0,1 security=security1 ssid=root tx-chains=\
-    0,1,2
+    ap name=cfg_2.4G rx-chains=0,1 security=easy ssid=1519_2 tx-chains=0,1,2
 /caps-man interface
 add configuration=cfg_2.4G disabled=no l2mtu=1600 mac-address=\
     2C:C8:1B:59:A6:18 master-interface=none name=cap1 radio-mac=\
@@ -68,10 +71,14 @@ set discover-interface-list=LAN
 /interface list member
 add interface=ether1 list=WAN
 add interface=bridge1 list=LAN
+/interface wireguard peers
+add allowed-address=10.9.0.3/32 endpoint-port=1 interface=wireguard1 \
+    public-key="2lb6COdenp2hU3ha2Ab+6RR0wpoEaAPBOcCLYHq/uEc="
 /interface wireless cap
 set bridge=bridge1 caps-man-addresses=127.0.0.1 interfaces=wlan1,wlan2
 /ip address
 add address=172.18.2.50/24 interface=bridge1 network=172.18.2.0
+add address=10.9.0.0 interface=wireguard1 network=10.9.0.0
 /ip dhcp-client
 add interface=ether1
 /ip dhcp-server network
@@ -81,6 +88,8 @@ add address=172.18.2.0/24 gateway=172.18.2.50 netmask=24
 set allow-remote-requests=yes servers=8.8.8.8,1.1.1.1
 /ip firewall filter
 add action=accept chain=output port=5246,5247 protocol=udp
+add action=accept chain=input dst-port=51820 in-interface-list=WAN protocol=\
+    udp
 add action=accept chain=input port=5246,5247 protocol=udp
 add action=accept chain=input comment="accept established,related,untracked" \
     connection-state=established,related,untracked
@@ -88,6 +97,8 @@ add action=drop chain=input comment="drop invalid" connection-state=invalid
 add action=drop chain=input comment="drop all not coming from LAN" \
     in-interface-list=!LAN
 /ip firewall nat
+add action=src-nat chain=srcnat out-interface=ether1 src-address=10.9.0.0/24 \
+    to-addresses=172.18.2.50
 add action=masquerade chain=srcnat out-interface-list=WAN
 /ip firewall service-port
 set ftp disabled=yes

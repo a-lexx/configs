@@ -1,4 +1,4 @@
-# feb/04/2023 12:46:09 by RouterOS 7.7
+# feb/27/2023 10:40:42 by RouterOS 7.7
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
@@ -7,7 +7,7 @@
 add name=bridge1
 /interface wireless
 # managed by CAPsMAN
-# channel: 2472/20/gn(18dBm), SSID: root, CAPsMAN forwarding
+# channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
 # channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
