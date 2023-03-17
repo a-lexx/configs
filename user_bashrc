@@ -76,12 +76,3 @@ function ssh() {
         /usr/bin/ssh "$@"
     fi
 }
-
-if [ -f $(brew --prefix)/bash_completion.d/kubectl ]; then
-   . $(brew --prefix)/bash_completion.d/kubectl
-fi
-
-# completion @2
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-# completion gcloud
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
