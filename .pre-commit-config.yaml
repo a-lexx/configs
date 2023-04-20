@@ -45,4 +45,3 @@ repos:
       - id: check-xml # checks xml files for parseable syntax.
       # YAML
       - id: check-yaml # checks yaml files for parseable syntax.
-
