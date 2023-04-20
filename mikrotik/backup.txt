@@ -18,4 +18,3 @@ sftp cap2:cap2.rsc ~/backups/mikrotik/v7.6/
 #upload, directory ~/backups/mikrotik/v7.6/ must be exists, for example: (mkdir -p ~/backups/mikrotik/v7.6/)
 sftp cap3:cap3.backup ~/backups/mikrotik/v7.6/
 sftp cap3:cap3.rsc ~/backups/mikrotik/v7.6/
-

@@ -72,7 +72,7 @@ set discover-interface-list=LAN
 add interface=ether1 list=WAN
 add interface=bridge1 list=LAN
 /interface wireless cap
-# 
+#
 set bridge=bridge1 caps-man-addresses=127.0.0.1 enabled=yes interfaces=\
     wlan1,wlan2
 /ip address

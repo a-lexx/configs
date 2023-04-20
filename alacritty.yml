@@ -850,7 +850,7 @@ key_bindings:
 ###      magenta: '#cd00cd'
 ###      cyan:    '#00cdcd'
 ###      white:   '#e5e5e5'
-### 
+###
 ###    # Bright colors
 ###    bright:
 ###      black:   '#7f7f7f'
@@ -922,7 +922,7 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 window:
-  opacity: 0.3
+  opacity: 0.9
   dimensions:
     columns: 150
     lines: 50
