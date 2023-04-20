@@ -110,7 +110,7 @@ font:
     #family: Hack
     family: MesloLGS NF
   # Font size
-  size: 17
+  size: 12
 
   # Better font rendering for mac
   #use_thin_strokes: true
@@ -922,7 +922,7 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 window:
-  opacity: 0.3
+  opacity: 0.5
   dimensions:
     columns: 150
     lines: 50
