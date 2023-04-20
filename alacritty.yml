@@ -165,7 +165,6 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -850,7 +849,7 @@ key_bindings:
 ###      magenta: '#cd00cd'
 ###      cyan:    '#00cdcd'
 ###      white:   '#e5e5e5'
-### 
+###
 ###    # Bright colors
 ###    bright:
 ###      black:   '#7f7f7f'

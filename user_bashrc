@@ -46,7 +46,7 @@ HISTCONTROL=ignorespace
 HISTCONTROL=erasedups
 # Чтобы история команд сохранялась сразу после ввода (а не во время закрытия терминала)
 shopt -s histappend
-PROMPT_COMMAND='history -a' 
+PROMPT_COMMAND='history -a'
 
 ### Proxy
 #export http_proxy="http://192.168.1.25:3128"
