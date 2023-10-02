@@ -16,12 +16,16 @@
       "episode": "s01e07",
       "url": ""
     },
-    "Star Trek: Picard": {
-      "episode": "s03e00",
-      "url": ""
+    "Invasion": {
+      "episode": "s02e06",
+      "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
     },
     "Star Trek: Discovery": {
       "episode": "s04e13",
+      "url": ""
+    },
+    "Star Trek: Picard": {
+      "episode": "s03e00",
       "url": ""
     },
     "Star Trek: Prodigy": {
@@ -31,10 +35,6 @@
     "Star Wars: Ahsoka": {
       "episode": "s01e07",
       "url": "https://rezka.ag/series/fiction/56847-asoka-2023.html"
-    },
-    "Invasion": {
-      "episode": "s02e06",
-      "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
     }
   }
 }
