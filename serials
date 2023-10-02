@@ -1,16 +1,40 @@
-# song s01-e07 8:30
-| 9-1-1: Lone Star | s03 e18 |
-
-| FBI: Most Wanted | s03 e16 |
-
-| Halo | s01 e07 |
-
-| Mayans MC | s04 e05 |
-
-| Moon Knight | s01 e06 |
-
-| Star Trek: Picard | s03 e00 |
-
-| Star Trek: Discovery | s04 e13 |
-
-| Star Trek: Prodigy | s01 e10 |
+{
+  "serials": {
+    "9-1-1: Lone Star": {
+      "episode": "s03e18",
+      "url": ""
+    },
+    "FBI: Most Wanted": {
+      "episode": "s03e16",
+      "url": ""
+    },
+    "Foundation": {
+      "episode": "s02e10",
+      "url": "https://rezka.ag/series/fiction/41482-osnovanie-2021.html"
+    },
+    "Halo": {
+      "episode": "s01e07",
+      "url": ""
+    },
+    "Star Trek: Picard": {
+      "episode": "s03e00",
+      "url": ""
+    },
+    "Star Trek: Discovery": {
+      "episode": "s04e13",
+      "url": ""
+    },
+    "Star Trek: Prodigy": {
+      "episode": "s01e10",
+      "url": ""
+    },
+    "Star Wars: Ahsoka": {
+      "episode": "s01e07",
+      "url": "https://rezka.ag/series/fiction/56847-asoka-2023.html"
+    },
+    "Invasion": {
+      "episode": "s02e05",
+      "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
+    }
+  }
+}

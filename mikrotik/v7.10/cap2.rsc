@@ -28,7 +28,7 @@ add interface=ether2 list=LAN
 add interface=wlan2 list=LAN
 add interface=wlan1 list=LAN
 /interface wireless cap
-# 
+#
 set bridge=bridge1 caps-man-addresses=172.18.2.50 enabled=yes interfaces=\
     wlan2,wlan1
 /ip address
