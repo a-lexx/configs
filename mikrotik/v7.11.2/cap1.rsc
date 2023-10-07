@@ -1,4 +1,4 @@
-# 2023-10-02 17:33:08 by RouterOS 7.11.2
+# 2023-10-07 11:36:38 by RouterOS 7.11.2
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -78,9 +78,9 @@ add allowed-address=10.9.0.3/32 endpoint-port=1 interface=wireguard1 \
 set bridge=bridge1 caps-man-addresses=127.0.0.1 interfaces=wlan1,wlan2
 /ip address
 add address=172.18.2.50/24 interface=bridge1 network=172.18.2.0
-add address=10.9.0.0 interface=wireguard1 network=10.9.0.0
+add address=10.9.8.50/24 interface=wireguard1 network=10.9.8.0
 /ip dhcp-client
-add interface=ether1
+add interface=ether1 use-peer-dns=no
 /ip dhcp-server lease
 add address=172.18.2.40 client-id=1:64:6c:80:90:d7:b3 mac-address=\
     64:6C:80:90:D7:B3 server=dhcp1

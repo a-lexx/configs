@@ -1,4 +1,4 @@
-# 2023-10-02 17:33:08 by RouterOS 7.11.2
+# 2023-10-07 11:36:38 by RouterOS 7.11.2
 # software id = 60N6-GUN1
 #
 # model = RBcAPGi-5acD2nD
