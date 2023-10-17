@@ -1,51 +1,68 @@
 {
   "serials": {
     "9-1-1: Lone Star": {
-      "episode": "s04e00",
+      "season": "04",
+      "episode": "00",
       "url": "https://rezka.ag/series/action/33166-911-odinokaya-zvezda-2020.html"
     },
     "Andor": {
-      "episode": "s01e12",
+      "season": "01",
+      "episode": "12",
       "url": "https://rezka.ag/series/fiction/49969-andor-2022.html"
     },
     "Black Mirror": {
-      "episode": "s02e02",
+      "season": "02",
+      "episode": "02",
       "url": "https://rezka.ag/series/fiction/77-chernoe-zerkalo-2011.html"
     },
     "FBI: Most Wanted": {
-      "episode": "s03e16",
+      "season": "03",
+      "episode": "16",
       "url": "https://rezka.ag/series/drama/33018-fbr-samye-razyskivaemye-prestupniki-2020.html"
     },
     "Foundation": {
-      "episode": "s02e10",
+      "season": "02",
+      "episode": "10",
       "url": "https://rezka.ag/series/fiction/41482-osnovanie-2021.html"
     },
     "Halo": {
-      "episode": "s01e07",
+      "season": "01",
+      "episode": "07",
       "url": "https://rezka.ag/series/fiction/46346-halo-2022.html"
     },
     "Invasion": {
-      "episode": "s02e08",
+      "season": "02",
+      "episode": "08",
       "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
     },
+    "Loki": {
+      "seasone": "02",
+      "episode": "02",
+      "url": "https://rezka.ag/series/fiction/38198-loki-2021.html"
+    },
     "Star Trek: Discovery": {
-      "episode": "s05e00",
+      "season": "05",
+      "episode": "00",
       "url": "https://rezka.ag/series/fiction/25717-zvezdnyy-put-diskaveri-2017.html"
     },
     "Star Trek: Picard": {
-      "episode": "s03e00",
+      "season": "03",
+      "episode": "00",
       "url": "https://rezka.ag/series/fiction/33036-zvezdnyy-put-pikar-2020.html"
     },
     "Star Trek: Prodigy": {
-      "episode": "s01e20",
+      "season": "01",
+      "episode": "20",
       "url": "https://rezka.ag/cartoons/fiction/42596-zvezdnyy-put-protozvezda-2021.html"
     },
     "Star Trek: Strange New Worlds": {
-      "episode": "s02e10",
+      "season": "02",
+      "episode": "10",
       "url": "https://rezka.ag/series/fiction/47886-zvezdnyy-put-strannye-novye-miry-2022.html"
     },
     "Star Wars: Ahsoka": {
-      "episode": "s01e08",
+      "season": "01",
+      "episode": "08",
       "url": "https://rezka.ag/series/fiction/56847-asoka-2023.html"
     }
   }
