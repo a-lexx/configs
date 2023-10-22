@@ -35,10 +35,28 @@
       "episode": "08",
       "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
     },
+    "Impulse": {
+      "season": "00",
+      "episode": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/27891-impuls-2018.html"
+    },
     "Loki": {
       "seasone": "02",
       "episode": "02",
       "url": "https://rezka.ag/series/fiction/38198-loki-2021.html"
+    },
+    "Philip K. Dick's Electric Dreams": {
+      "seasone": "00",
+      "episode": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/25683-elektricheskie-sny-filipa-k-dika-2017.html"
+    },
+    "San ti / The Three-Body Problem": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/54494-zadacha-treh-tel-2023.html"
     },
     "Star Trek: Discovery": {
       "season": "05",
@@ -64,6 +82,24 @@
       "season": "01",
       "episode": "08",
       "url": "https://rezka.ag/series/fiction/56847-asoka-2023.html"
+    },
+    "Silo": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/55680-ukrytie-2023.html"
+    },
+    "The Peripheral": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/51560-periferiynye-ustroystva-2022.html"
+    },
+    "The Stand": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/35991-protivostoyanie-2020.html"
     }
   }
 }
