@@ -1,0 +1,13 @@
+[Unit]
+Description=Communal notify
+
+[Timer]
+OnCalendar=*-*~01 9:15
+OnCalendar=*-*~01 12:20
+OnCalendar=*-*~01 18:30
+OnCalendar=*-*~01 20:30
+Persistent=true
+Unit=communal.service
+
+[Install]
+WantedBy=timers.target

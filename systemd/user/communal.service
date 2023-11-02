@@ -1,0 +1,6 @@
+[Unit]
+Description=Notification of the data entry
+
+[Service]
+Type=simple
+ExecStart=/home/ok/.bin/communal

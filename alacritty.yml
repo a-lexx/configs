@@ -107,10 +107,9 @@ env:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    #family: Hack
-    family: MesloLGS NF
+    family: Hack
   # Font size
-  size: 12
+  size: 10
 
   # Better font rendering for mac
   #use_thin_strokes: true
