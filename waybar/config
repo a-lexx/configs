@@ -9,15 +9,15 @@
     "modules-right": ["custom/moc", "pulseaudio", "network", "custom/extip", "cpu", "memory", "temperature", "backlight", "clock", "battery", "battery#bat2", "sway/language", "tray"],
     // Modules configuration
     "sway/workspaces": {
-        "disable-scroll": true,
+        //"disable-scroll": true,
         "all-outputs": true,
         "format": "{name}: {icon}",
         "format-icons": {
             "1": "",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
             "urgent": "",
             //"focused": "",
             "default": ""
