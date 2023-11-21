@@ -1,4 +1,4 @@
-# 2023-11-03 19:15:50 by RouterOS 7.11.2
+# 2023-11-09 10:42:26 by RouterOS 7.11.2
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -112,6 +112,9 @@ set ftp disabled=yes
 set tftp disabled=yes
 set sip disabled=yes
 set pptp disabled=yes
+/ip route
+add comment=lxc disabled=no distance=1 dst-address=10.0.3.0/24 gateway=\
+    172.18.2.115 pref-src="" routing-table=main suppress-hw-offload=no
 /system clock
 set time-zone-name=Europe/Kyiv
 /system identity

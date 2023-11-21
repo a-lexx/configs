@@ -17,7 +17,11 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
             "urgent": "",
             //"focused": "",
             "default": ""
@@ -28,10 +32,10 @@
     },
     "custom/arch-updates": {
         "format": " {}",
-        "interval": "900",
+        "interval": 900,
         "exec": "checkupdates | wc -l",
         "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
-        "on-click": "alacritty --class floating -e yay --devel -Syu",
+        "on-click": "alacritty --class floating -e yay --devel -Syu --noconfirm",
         "on-click-right": "checkupdates | wc -l",
         "on-click-left": "alacritty --class floating -e paccache -rk1",
         "tooltip": false
