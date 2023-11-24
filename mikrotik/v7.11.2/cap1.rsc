@@ -1,4 +1,4 @@
-# 2023-11-09 10:42:26 by RouterOS 7.11.2
+# 2023-11-22 20:21:07 by RouterOS 7.11.2
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
