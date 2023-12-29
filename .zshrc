@@ -166,7 +166,6 @@ ZSH_DISABLE_COMPFIX="true"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export OPENAI_API_KEY=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
 
 export CLOUDSDK_PYTHON=/usr/local/bin/python3.11
 export PATH="/usr/local/opt/node@18/bin:$PATH"
