@@ -1,4 +1,4 @@
-# feb/27/2023 10:40:42 by RouterOS 7.7
+# 2023-08-30 14:50:54 by RouterOS 7.11
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
@@ -10,7 +10,6 @@ add name=bridge1
 # channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
-# channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] ssid=MikroTik
 /interface list
 add name=WAN
@@ -44,6 +43,8 @@ set time-zone-name=Europe/Kyiv
 set name=CAP3
 /system leds settings
 set all-leds-off=immediate
+/system note
+set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -52,7 +53,7 @@ add address=ntp2.time.in.ua
 /system scheduler
 add comment=dark-mode disabled=yes interval=12h name=dark-mode on-event=\
     "/system/script/run dark-mode" policy=read,write,policy,test start-date=\
-    oct/27/2022 start-time=21:00:00
+    2022-10-27 start-time=21:00:00
 /system script
 add comment=defconf dont-require-permissions=no name=dark-mode owner=*sys \
     policy=read,write,policy,test source="   :if ([system leds settings get al\

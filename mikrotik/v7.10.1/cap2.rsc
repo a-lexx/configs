@@ -1,8 +1,8 @@
-# feb/27/2023 10:40:42 by RouterOS 7.7
-# software id = M5Y4-QJSY
+# 2023-07-01 01:35:36 by RouterOS 7.10.1
+# software id = 60N6-GUN1
 #
 # model = RBcAPGi-5acD2nD
-# serial number = E2810E00230F
+# serial number = BECD0B24597A
 /interface bridge
 add name=bridge1
 /interface wireless
@@ -10,7 +10,7 @@ add name=bridge1
 # channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
 set [ find default-name=wlan1 ] ssid=MikroTik
 # managed by CAPsMAN
-# channel: 5320/20-eeeC/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
+# channel: 5500/20-Ceee/ac/DP(17dBm), SSID: 1519, CAPsMAN forwarding
 set [ find default-name=wlan2 ] ssid=MikroTik
 /interface list
 add name=WAN
@@ -20,8 +20,8 @@ set [ find default=yes ] supplicant-identity=MikroTik
 /interface bridge port
 add bridge=bridge1 interface=ether1
 add bridge=bridge1 interface=ether2
-add bridge=bridge1 interface=wlan1
 add bridge=bridge1 interface=wlan2
+add bridge=bridge1 interface=wlan1
 /interface list member
 add interface=ether1 list=WAN
 add interface=ether2 list=LAN
@@ -30,20 +30,17 @@ add interface=wlan1 list=LAN
 /interface wireless cap
 #
 set bridge=bridge1 caps-man-addresses=172.18.2.50 enabled=yes interfaces=\
-    wlan1,wlan2
+    wlan2,wlan1
 /ip address
-add address=172.18.2.30/24 interface=ether1 network=172.18.2.0
+add address=172.18.2.20/24 interface=ether1 network=172.18.2.0
 /ip dns
 set servers=172.18.2.50
-/ip route
-add disabled=no distance=1 dst-address=0.0.0.0/0 gateway=172.18.2.50 \
-    pref-src="" routing-table=main suppress-hw-offload=no
 /system clock
 set time-zone-name=Europe/Kyiv
 /system identity
-set name=CAP3
-/system leds settings
-set all-leds-off=immediate
+set name=CAP2
+/system note
+set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -52,7 +49,7 @@ add address=ntp2.time.in.ua
 /system scheduler
 add comment=dark-mode disabled=yes interval=12h name=dark-mode on-event=\
     "/system/script/run dark-mode" policy=read,write,policy,test start-date=\
-    oct/27/2022 start-time=21:00:00
+    2022-10-26 start-time=21:00:00
 /system script
 add comment=defconf dont-require-permissions=no name=dark-mode owner=*sys \
     policy=read,write,policy,test source="   :if ([system leds settings get al\

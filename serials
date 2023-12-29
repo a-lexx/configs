@@ -1,16 +1,105 @@
-# song s01-e07 8:30
-| 9-1-1: Lone Star | s03 e18 |
-
-| FBI: Most Wanted | s03 e16 |
-
-| Halo | s01 e07 |
-
-| Mayans MC | s04 e05 |
-
-| Moon Knight | s01 e06 |
-
-| Star Trek: Picard | s03 e00 |
-
-| Star Trek: Discovery | s04 e13 |
-
-| Star Trek: Prodigy | s01 e10 |
+{
+  "serials": {
+    "9-1-1: Lone Star": {
+      "season": "04",
+      "episode": "00",
+      "url": "https://rezka.ag/series/action/33166-911-odinokaya-zvezda-2020.html"
+    },
+    "Andor": {
+      "season": "01",
+      "episode": "12",
+      "url": "https://rezka.ag/series/fiction/49969-andor-2022.html"
+    },
+    "Black Mirror": {
+      "season": "02",
+      "episode": "02",
+      "url": "https://rezka.ag/series/fiction/77-chernoe-zerkalo-2011.html"
+    },
+    "FBI: Most Wanted": {
+      "season": "03",
+      "episode": "16",
+      "url": "https://rezka.ag/series/drama/33018-fbr-samye-razyskivaemye-prestupniki-2020.html"
+    },
+    "Foundation": {
+      "season": "02",
+      "episode": "10",
+      "url": "https://rezka.ag/series/fiction/41482-osnovanie-2021.html"
+    },
+    "Halo": {
+      "season": "01",
+      "episode": "07",
+      "url": "https://rezka.ag/series/fiction/46346-halo-2022.html"
+    },
+    "Invasion": {
+      "season": "02",
+      "episode": "10",
+      "url": "https://rezka.ag/series/fiction/42605-vtorzhenie-2021.html"
+    },
+    "Impulse": {
+      "season": "00",
+      "episode": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/27891-impuls-2018.html"
+    },
+    "Loki": {
+      "seasone": "02",
+      "episode": "03",
+      "url": "https://rezka.ag/series/fiction/38198-loki-2021.html"
+    },
+    "Philip K. Dick's Electric Dreams": {
+      "seasone": "00",
+      "episode": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/25683-elektricheskie-sny-filipa-k-dika-2017.html"
+    },
+    "San ti / The Three-Body Problem": {
+      "season": "01",
+      "episode": "03",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/54494-zadacha-treh-tel-2023.html"
+    },
+    "Star Trek: Discovery": {
+      "season": "05",
+      "episode": "00",
+      "url": "https://rezka.ag/series/fiction/25717-zvezdnyy-put-diskaveri-2017.html"
+    },
+    "Star Trek: Picard": {
+      "season": "03",
+      "episode": "00",
+      "url": "https://rezka.ag/series/fiction/33036-zvezdnyy-put-pikar-2020.html"
+    },
+    "Star Trek: Prodigy": {
+      "season": "01",
+      "episode": "20",
+      "url": "https://rezka.ag/cartoons/fiction/42596-zvezdnyy-put-protozvezda-2021.html"
+    },
+    "Star Trek: Strange New Worlds": {
+      "season": "02",
+      "episode": "10",
+      "url": "https://rezka.ag/series/fiction/47886-zvezdnyy-put-strannye-novye-miry-2022.html"
+    },
+    "Star Wars: Ahsoka": {
+      "season": "01",
+      "episode": "08",
+      "url": "https://rezka.ag/series/fiction/56847-asoka-2023.html"
+    },
+    "Silo": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/55680-ukrytie-2023.html"
+    },
+    "The Peripheral": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/fiction/51560-periferiynye-ustroystva-2022.html"
+    },
+    "The Stand": {
+      "episode": "00",
+      "season": "00",
+      "status": "wishlist",
+      "url": "https://rezka.ag/series/drama/35991-protivostoyanie-2020.html"
+    }
+  }
+}

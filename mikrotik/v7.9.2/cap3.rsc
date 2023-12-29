@@ -1,4 +1,4 @@
-# feb/27/2023 10:40:42 by RouterOS 7.7
+# jun/08/2023 22:05:40 by RouterOS 7.9.2
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
@@ -44,6 +44,8 @@ set time-zone-name=Europe/Kyiv
 set name=CAP3
 /system leds settings
 set all-leds-off=immediate
+/system note
+set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
