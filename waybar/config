@@ -32,7 +32,7 @@
     },
     "custom/arch-updates": {
         "format": " {}",
-        "interval": 900,
+        "interval": 600,
         "exec": "checkupdates | wc -l",
         "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
         "on-click": "alacritty --class floating -e yay --devel -Syu --noconfirm",

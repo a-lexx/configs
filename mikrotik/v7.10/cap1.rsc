@@ -1,4 +1,4 @@
-# 2023-12-19 09:14:36 by RouterOS 7.12.1
+# 2023-11-28 14:01:23 by RouterOS 7.12.1
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -85,9 +85,6 @@ add interface=ether1 use-peer-dns=no
 /ip dhcp-server lease
 add address=172.18.2.40 client-id=1:64:6c:80:90:d7:b3 mac-address=\
     64:6C:80:90:D7:B3 server=dhcp1
-add address=172.18.2.15 client-id=\
-    ff:3e:89:64:18:0:1:0:1:27:ba:5c:d1:0:16:3e:5:4e:89 mac-address=\
-    00:16:3E:89:64:18 server=dhcp1
 /ip dhcp-server network
 add address=0.0.0.0/24 gateway=0.0.0.0 netmask=24
 add address=172.18.2.0/24 gateway=172.18.2.50 netmask=24
@@ -104,22 +101,13 @@ add action=drop chain=input comment="drop invalid" connection-state=invalid
 add action=drop chain=input comment="drop all not coming from LAN" \
     in-interface-list=!LAN
 /ip firewall nat
-add action=src-nat chain=srcnat out-interface-list=WAN to-addresses=\
-    159.224.176.54
-add action=masquerade chain=srcnat disabled=yes out-interface-list=WAN
+add action=src-nat chain=srcnat out-interface=ether1 src-address=10.9.0.0/24 \
+    to-addresses=172.18.2.50
+add action=masquerade chain=srcnat out-interface-list=WAN
 add action=dst-nat chain=dstnat dst-port=22 in-interface=ether1 protocol=tcp \
-    to-addresses=172.18.2.15 to-ports=22
-add action=dst-nat chain=dstnat comment=centurion-ssh-access dst-port=39901 \
-    in-interface-list=WAN protocol=tcp to-addresses=172.18.2.10 to-ports=22
-add action=dst-nat chain=dstnat dst-port=80 in-interface-list=WAN protocol=\
-    tcp to-addresses=172.18.2.15 to-ports=80
-add action=dst-nat chain=dstnat dst-port=443 in-interface-list=WAN protocol=\
-    tcp to-addresses=172.18.2.15 to-ports=443
-add action=dst-nat chain=dstnat dst-port=53 in-interface-list=WAN protocol=\
-    udp to-addresses=172.18.2.15 to-ports=53
-add action=dst-nat chain=dstnat dst-address=159.224.176.54 dst-port=443 \
-    in-interface-list=LAN protocol=tcp src-address=172.18.2.0/24 \
-    to-addresses=172.18.2.15 to-ports=443
+    to-addresses=172.18.2.40 to-ports=22
+add action=dst-nat chain=dstnat dst-port=39901 protocol=tcp to-addresses=\
+    172.18.2.115 to-ports=22
 /ip firewall service-port
 set ftp disabled=yes
 set tftp disabled=yes
@@ -138,8 +126,6 @@ set show-at-login=no
 set enabled=yes
 /system ntp client servers
 add address=ntp.time.in.ua
-/tool e-mail
-set from=mikrotik server=10.0.3.10 tls=starttls
 /tool mac-server
 set allowed-interface-list=LAN
 /tool mac-server mac-winbox

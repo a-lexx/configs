@@ -1,10 +1,10 @@
-# 2023-12-19 09:14:36 by RouterOS 7.12.1
+# 2023-12-21 09:49:02 by RouterOS 7.13
 # software id = M5Y4-QJSY
 #
 # model = RBcAPGi-5acD2nD
 # serial number = E2810E00230F
 /interface bridge
-add name=bridge1
+add name=bridge1 port-cost-mode=short
 /interface wireless
 # managed by CAPsMAN
 # channel: 2472/20/gn(18dBm), SSID: 1519_2, CAPsMAN forwarding
@@ -18,10 +18,10 @@ add name=LAN
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
 /interface bridge port
-add bridge=bridge1 interface=ether1
-add bridge=bridge1 interface=ether2
-add bridge=bridge1 interface=wlan1
-add bridge=bridge1 interface=wlan2
+add bridge=bridge1 interface=ether1 internal-path-cost=10 path-cost=10
+add bridge=bridge1 interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=bridge1 interface=wlan1 internal-path-cost=10 path-cost=10
+add bridge=bridge1 interface=wlan2 internal-path-cost=10 path-cost=10
 /interface list member
 add interface=ether1 list=WAN
 add interface=ether2 list=LAN

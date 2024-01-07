@@ -131,10 +131,17 @@ if [ -f '${HOME}/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    exec sway -d > /tmp/sway.log
+    exec sway -d 2> /tmp/sway.log
 fi
 
 export SWAYSOCK=/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock
+source ~/.zsh_functions
+
+export XKB_DEFAULT_LAYOUT=us,ru
+export XDG_CONFIG_HOME=${HOME}/.config
+export XDG_DATA_HOME=${HOME}/.local/share
+export XDG_CACHE_HOME=${HOME}/.cache
+export GOPATH=${XDG_DATA_HOME}/go
 
 # Ansible
 export ANSIBLE_INVENTORY=~/hosts
