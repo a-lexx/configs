@@ -1,0 +1,10 @@
+[Unit]
+Description=Update mirrorlist
+
+[Timer]
+OnCalendar=*-*-* 02:02:02
+Persistent=true
+Unit=mirrors.service
+
+[Install]
+WantedBy=timers.target

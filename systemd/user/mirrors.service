@@ -1,0 +1,9 @@
+[Unit]
+Description=Update mirrorlist
+
+[Service]
+Type=oneshot
+ExecStart=/home/ok/git/configs/scripts/mirrors.sh
+
+[Install]
+WantedBy=multi-user.target
