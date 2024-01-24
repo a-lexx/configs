@@ -74,7 +74,8 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "swaymsg exec \\$term_float htop"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -136,19 +137,14 @@
     },
     "custom/wether": {
         "interval": "300",
-        "exec": "curl -Ss 'https://wttr.in/Kiev?0&T&Q' | cut -c 16- | head -2 | xargs echo",
+        //"exec": "curl -Ss 'https://wttr.in/Kiev?0&T&Q' | cut -c 16- | head -2 | xargs echo",
+        "exec": "curl -Ss 'https://wttr.in/Kiev?format=3'",
         "on-click": "xdg-open https://wttr.in/Kiev?0&T&Q",
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
+//    "sway/language": {
+//         "format": "<U+F11C> {}",
+//         "min-length": 5,
+//         "tooltip": false,
+//         "on-click": "swaymsg input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next"
+//    }
 }

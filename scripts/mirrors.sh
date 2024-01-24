@@ -10,8 +10,10 @@ then
           echo "Server = ${list}\$repo/os/\$arch" | sudo tee -a /etc/pacman.d/mirrorlist
       done
 
-    echo 'Source list updated'
+    echo -n 'Source list updated '
+    echo "$(date -I)"
 else
-    echo 'List is empty'
+    echo -n 'List is empty '
+    echo "$(date -I)"
     exit
 fi
