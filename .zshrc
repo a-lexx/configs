@@ -169,3 +169,8 @@ ZSH_DISABLE_COMPFIX="true"
 
 export CLOUDSDK_PYTHON=/usr/local/bin/python3.11
 export PATH="/usr/local/opt/node@18/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

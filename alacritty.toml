@@ -84,7 +84,7 @@ action = "PasteSelection"
 mouse = "Middle"
 
 [window]
-opacity = 0.3
+opacity = 0.9
 
 [window.dimensions]
 columns = 150
