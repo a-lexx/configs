@@ -1,0 +1,8 @@
+version="9"
+logging="no"
+name="git"
+enabled="yes"
+type="17"
+action="Move to folder"
+actionValue="imap://o.v.kyrylchenko%40gmail.com@imap.gmail.com/github"
+condition="AND (from,contains,notifications@github.com)"

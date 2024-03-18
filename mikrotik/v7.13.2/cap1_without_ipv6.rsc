@@ -1,4 +1,4 @@
-# 2024-02-18 14:56:22 by RouterOS 7.13.2
+# 2024-01-24 14:27:47 by RouterOS 7.13.2
 # software id = FE3U-D84W
 #
 # model = RBD52G-5HacD2HnD-TCr2
@@ -26,9 +26,6 @@ set [ find default-name=ether2 ] comment=aquarium
 set [ find default-name=ether3 ] comment=cap2
 set [ find default-name=ether4 ] comment=reserv
 set [ find default-name=ether5 ] comment=cap3
-/interface 6to4
-add comment="Hurricane Electric IPv6 Tunnel Broker" !keepalive local-address=\
-    159.224.176.54 mtu=1280 name=sit1 remote-address=216.66.80.162
 /interface wireguard
 add listen-port=51820 mtu=1420 name=wireguard1
 /caps-man datapath
@@ -112,7 +109,7 @@ add address=172.18.2.15 client-id=\
     00:16:3E:89:64:18 server=dhcp1
 /ip dhcp-server network
 add address=0.0.0.0/24 gateway=0.0.0.0 netmask=24
-add address=172.18.2.0/24 dns-server=172.18.2.10,172.18.2.50,1.1.1.1 gateway=\
+add address=172.18.2.0/24 dns-server=172.18.2.10,172.18.2.15,1.1.1.1 gateway=\
     172.18.2.50 netmask=24
 /ip dns
 set allow-remote-requests=yes servers=8.8.8.8,1.1.1.1
@@ -120,8 +117,6 @@ set allow-remote-requests=yes servers=8.8.8.8,1.1.1.1
 add action=accept chain=output port=5246,5247 protocol=udp
 add action=accept chain=input dst-port=51820 in-interface-list=WAN protocol=\
     udp
-add action=accept chain=input protocol=icmp src-address=66.220.2.74 \
-    src-address-list=""
 add action=accept chain=input port=5246,5247 protocol=udp
 add action=accept chain=input comment="accept established,related,untracked" \
     connection-state=established,related,untracked
@@ -141,9 +136,12 @@ add action=dst-nat chain=dstnat dst-port=80 in-interface-list=WAN protocol=\
 add action=dst-nat chain=dstnat dst-port=443 in-interface-list=WAN protocol=\
     tcp to-addresses=172.18.2.10 to-ports=443
 add action=dst-nat chain=dstnat dst-port=53 in-interface-list=WAN protocol=\
-    udp to-addresses=172.18.2.15 to-ports=53
+    udp to-addresses=172.18.2.10 to-ports=53
 add action=dst-nat chain=dstnat comment=wg-docker dst-port=123 \
     in-interface-list=WAN protocol=udp to-addresses=172.18.2.10 to-ports=123
+add action=dst-nat chain=dstnat disabled=yes dst-address=159.224.176.54 \
+    dst-port=443 in-interface-list=LAN protocol=tcp src-address=172.18.2.0/24 \
+    to-addresses=172.18.2.15 to-ports=443
 add action=masquerade chain=srcnat out-interface=wireguard1
 /ip firewall service-port
 set ftp disabled=yes
@@ -153,15 +151,8 @@ set pptp disabled=yes
 /ip route
 add comment=lxc disabled=no distance=1 dst-address=10.0.3.0/24 gateway=\
     172.18.2.115 pref-src="" routing-table=main suppress-hw-offload=no
-/ipv6 route
-add disabled=yes distance=1 dst-address=2000::/3 gateway=2001:470:70:63c::1 \
-    routing-table=main scope=30 suppress-hw-offload=no target-scope=10
-/ipv6 address
-add address=2001:470:70:63c::2 advertise=no interface=sit1
-add address=2001:470:71:63c::1 comment=Hurricane disabled=yes interface=\
-    bridge1
 /system clock
-set time-zone-name=Europe/Kyiv
+set time-zone-name=Europe/Kiev
 /system identity
 set name=cap1.home
 /system note

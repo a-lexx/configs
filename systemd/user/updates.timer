@@ -1,0 +1,10 @@
+[Unit]
+Description=Updates notify
+
+[Timer]
+OnCalendar=*-*-* 9,12,15,18,21:08
+Persistent=true
+Unit=updates.service
+
+[Install]
+WantedBy=timers.target
