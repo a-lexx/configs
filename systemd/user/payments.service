@@ -1,0 +1,6 @@
+[Unit]
+Description=Notification about payments
+
+[Service]
+Type=simple
+ExecStart=/home/ok/.bin/payments

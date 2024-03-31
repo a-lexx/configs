@@ -1,0 +1,13 @@
+[Unit]
+Description=Payments notify
+
+[Timer]
+OnCalendar=*-*-9..10 9:15
+OnCalendar=*-*-9..10 12:20
+OnCalendar=*-*-9..10 18:30
+OnCalendar=*-*-9..10 20:30
+Persistent=true
+Unit=payments.service
+
+[Install]
+WantedBy=timers.target
