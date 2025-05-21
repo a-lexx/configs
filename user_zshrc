@@ -114,43 +114,11 @@ ZSH_TMUX_AUTOSTART=true
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+alias sshu='ssh -l ubuntu'
+alias sshr='ssh -l root'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dnscacherm="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-alias uu='brew update && brew upgrade && brew cleanup'
-alias ip='ifconfig| grep -o -E '\''inet ([0-9]{1,3}[\.]){3}[0-9]{1,3}'\''|grep -v '\''127.0.0.1'\''|awk '\''{print }'\'
-alias email='echo ok@sharkscode.com'
-alias rm='rm -v'
-alias mkdir='mkdir -p'
-
-### k8s start ###
-alias contexts='kubectl config get-contexts'
-alias contexts-current='kubectl config current-context'
-alias contexts-switch='kubectl config use-context'
-alias kk="cat ~/Documents/kubernetes_cheat"
-alias describe-aws-ing="kubectl -n $1 get ing $2 -o yaml | yq e 'del(.metadata.annotations."kubectl.kubernetes.io/last-applied-configuration", .metadata.creationTimestamp, .metadata.generation, .metadata.resourceVersion, .metadata.uid, .status)'"
-### k8s end ###
-
-### grc start ###
-alias ping='grc --colour=auto ping'
-alias traceroute='grc --colour=auto traceroute'
-alias cat='grc cat'
-alias dig="grc --colour=auto dig"
-alias diff="grc --colour=auto diff"
-alias head="grc --colour=auto head"
-alias ps="grc --colour=auto ps"
-### grc end ###
-
-### some start ###
-alias payments='echo Чистий прибуток підприємця після сплати податку'
-alias sshr='ssh -l root'
-### some end ###
-
-### Git ###
-alias currentpush='git push origin $(git symbolic-ref --short HEAD)'
-alias gh-actions='mkdir -p .github/workflows'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -160,15 +128,24 @@ export ANSIBLE_INVENTORY=~/hosts
 export ANSIBLE_NOCOWS=1
 export ANSIBLE_CONFIG=~/.ansible.cfg
 
-# Terraform
-alias apply='terraform apply'
-alias plan='terraform plan'
-
 # Tmux
 if [[ ! $(tmux list-sessions) ]]; then
     tmux
 fi
 
 # Functions
-source ~/.functions
+FPATH="~/.zfunc:$FPATH"
+source ~/.zfunc/functions
+
+# Aliases
+source ~/.alias
+
+# exports
 export GOPATH=~/.local/go
+export LDFLAGS="-L/opt/homebrew/opt/mysql@8.0/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql@8.0/include"
+# export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
