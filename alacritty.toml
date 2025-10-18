@@ -33,7 +33,8 @@ white = "#e5e9f0"
 yellow = "#ebcb8b"
 
 [colors.primary]
-background = "#000000"
+# background = '0x2E3440'
+background = '#000000'
 dim_foreground = "#a5abb6"
 foreground = "#d8dee9"
 
@@ -50,7 +51,8 @@ cursor = "#d8dee9"
 text = "#2e3440"
 
 [env]
-TERM = "xterm-256color"
+# TERM = "xterm-256color"
+TERM = "alacritty"
 
 [font]
 size = 16
@@ -84,7 +86,9 @@ action = "PasteSelection"
 mouse = "Middle"
 
 [window]
+decorations = "full"
 opacity = 0.8
+# dynamic_padding = true
 
 [window.dimensions]
 columns = 150

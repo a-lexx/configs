@@ -149,3 +149,5 @@ export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,3 +1,4 @@
 *.swp
 Brewfile.lock.json
 *.backup
+.DS_Store
