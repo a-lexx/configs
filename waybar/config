@@ -70,11 +70,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "alacritty --class floating -e htop"
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "swaymsg exec \\$term_float htop"
+        "on-click": "alacritty --class floating -e htop"
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
